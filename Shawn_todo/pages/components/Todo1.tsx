@@ -11,6 +11,7 @@ type item = {
     toggleItemCompleted:Function;
 
 };
+//the to-do list component
 export default function Todo1(props: item) {
     const viewTemplate = (
         
