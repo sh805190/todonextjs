@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 type form = {
     addItem: Function;
 }
+//the adding to-do item component
 export default function Form(props: form) {
 
     const [isEditing, setEditing] = useState(false);
@@ -13,7 +14,7 @@ export default function Form(props: form) {
     const [title, setTitle] = useState('')
     const [description, setDes] = useState('')
     const [loading,setloading]=useState('');
-
+//submit and check validation
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
         setError1('');
