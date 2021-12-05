@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import useSWR from "swr";
 import Link from 'next/link';
 
-
+//This is the detail page use SWR
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Detail() {
