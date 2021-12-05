@@ -39,7 +39,7 @@ export default function Home({ items1 }) {
   })
 
   const [items, setItems] = useState<Array<item>>(here);
-
+//filter to ensure completed item at bottom
   const itemListActive = items.filter(item => !item.completed).map(item => (
     <Todo1 id={item.id}
       title={item.title}
@@ -53,6 +53,8 @@ export default function Home({ items1 }) {
 
     />
   ))
+  //filter to ensure completed item at bottom
+
   const itemListComplete = items.filter(item => item.completed).map(item => (
     <Todo1 id={item.id}
       title={item.title}
@@ -67,6 +69,7 @@ export default function Home({ items1 }) {
 
     />
   ))
+  //ensure  item state completed also
   function toggleItemCompleted(id: string) {
     const updatedItems = items.map(item => {
       if (id === item.id) {
@@ -76,10 +79,14 @@ export default function Home({ items1 }) {
     })
     setItems(updatedItems)
   }
+  //delete item
+
   function deleteItem(id: string) {
     const remainingItems = items.filter(item => id !== item.id);
     setItems(remainingItems)
   }
+  //add item
+
   function addItem(title: string, description: string) {
     const newItem = { id: "todo-" + nanoid(), title: title, createdDate: new Date().toString(),
      completedDate: null, description: description, completed: false, deleteItem, toggleItemCompleted }
